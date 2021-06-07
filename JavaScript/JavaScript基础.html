@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 题目描述
+      // 依次询问并获取用户的姓名、年龄、性别，收集数据之后在控制台依次打印出来。
+      // var name = prompt('请输入您的姓名：')
+      // var age = prompt('请输入您的年龄：')
+      // var sex = prompt('请输入您的性别：')
+      // console.log('用户的姓名：' + name)
+      // console.log('用户的性别：' + age)
+      // console.log('用户的年龄：' + sex)
+
+      //       题目描述
+      // 1、询问用户年龄，用户输入年龄后，把用户输入的年龄增加5岁
+      // 2、增加5岁后，通过弹出框提示用户 “ 据我估计，五年后，你可能XX岁了”
+      // var age = Number(prompt('你现在多少岁了？')) + 5
+      // console.log('据我估计，五年后，你可能' + age + '岁了')
+
+      //       - 题目描述：
+      //   用户输入几点弹出问候信息；
+      //     	如用户输入12点中午好；
+      //     	用户输入18点 弹出傍晚好；
+      //   	用户输入23点弹出深夜好；
+      // - 题目提示：
+      // 通过比较运算符判定输入的时间的范围，弹出相应的问候信息
+      // var time = prompt('请输入现在的时间')
+      // if (time >= 0 && time <= 6) {
+      //   alert('凌晨好')
+      // } else if (time >= 6 && time < 12) {
+      //   alert('早晨好')
+      // } else if (time == 12) {
+      //   alert('中午好')
+      // } else if (time > 12 && time < 18) {
+      //   alert('下午好')
+      // } else if (time == 18) {
+      //   alert('傍晚好')
+      // } else if (time > 18 && time < 23) {
+      //   alert('晚上好')
+      // } else if (time >= 23 && time <= 24) {
+      //   alert('深夜好')
+      // } else {
+      //   alert('请输入合法的时间')
+      // }
+
+      //       - 题目描述：
+      //   	用户依次输入2个值，最后弹出最大的那个值
+      // - 题目提示：
+      //   	通过比较运算符弹出最大值
+      // var a = Number(prompt('请输入第一个数'))
+      // var b = Number(prompt('请输入第二个数'))
+      // if (a > b) {
+      //   alert('两个数中的最大值是' + a)
+      // } else {
+      //   alert('两个数中的最大值是' + b)
+      // }
+
+      //       - 题目描述：
+      //   	用户输入一个数，判断是奇数还是偶数
+      // - 题目提示：
+      //   	通过%运算符可以得出数字的奇偶性
+      // var x = Number(prompt('请输入你要判断的数'))
+      // if (x % 2 == 0) {
+      //   alert('该数字为偶数')
+      // } else {
+      //   alert('该数字为奇数')
+      // }
+
+      //       - 题目描述：
+      //   	假设这个月1号是星期三，提示用户输入本月的日期（即1日-31日），返回用户输入的那一天是星期几
+      // - 题目提示：
+      //   	利用%和7取余，再判定是星期几
+      // var day = prompt('请输入你要判断的日期')
+      // function nowdays(day) {
+      //   if (day == 1) {
+      //     return '三'
+      //   } else if (day == 2) {
+      //     return '四'
+      //   } else if (day == 3) {
+      //     return '五'
+      //   } else if (day == 4) {
+      //     return '六'
+      //   } else if (day == 5) {
+      //     return '天'
+      //   } else if (day == 6) {
+      //     return '一'
+      //   } else if (day == 0) {
+      //     return '二'
+      //   }
+      // }
+      // if (day >= 1 && day <= 31) {
+      //   var nowday = nowdays(day % 7)
+      //   alert('今天是星期' + nowday)
+      // } else {
+      //   alert('请输入合法的日期')
+      // }
+
+      //       - 题目描述：
+      //   	接收班长口袋里的钱数？
+      //   	若大于等于2000，请大家吃西餐。
+      //   	若小于2000，大于等于1500，请大家吃快餐。
+      //   	若小于1500，大于等于1000，请大家喝饮料。
+      //   	若小于1000，大于等于500，请大家吃棒棒糖。
+      //   	否则提醒班长下次把钱带够
+      // - 题目提示：
+      //   	使用switch或者if else if 来进行逻辑书写
+      // var money = prompt('班长口袋的金额是：')
+      // if else if
+      // if (money > 0 && money < 500) {
+      //   alert('班长，下次装逼请把钱带够')
+      // } else if (money >= 500 && money < 1000) {
+      //   alert('请大家吃棒棒糖')
+      // } else if (money >= 1000 && money < 1500) {
+      //   alert('请大家喝饮料')
+      // } else if (money >= 1500 && money < 2000) {
+      //   alert('请大家吃快餐')
+      // } else if (money >= 2000) {
+      //   alert('请大家吃西餐')
+      // } else {
+      //   alert('请输入正确的金额')
+      // }
+      // switch
+      // switch (true) {
+      //   case money > 0 && money < 500:
+      //     alert('班长，下次装逼请把钱带够')
+      //     break
+      //   case money >= 500 && money < 1000:
+      //     alert('请大家吃棒棒糖')
+      //     break
+
+      //   case money >= 1000 && money < 1500:
+      //     alert('请大家喝饮料')
+      //     break
+
+      //   case money >= 1500 && money < 2000:
+      //     alert('请大家吃快餐')
+      //     break
+
+      //   case money >= 2000:
+      //     alert('请大家吃西餐')
+      //     break
+
+      //   default:
+      //     alert('请输入正确的金额')
+      // }
+
+      //       - 题目描述：
+      //   	分数转换,给一个分数，判定等级。大于等于90  A，大于等于80小于90  B，大于等于70小于80  C ，大于等于60小于70 D，小于60 E
+      // - 题目提示：
+      //   	使用if else if 来进行逻辑书写，当使用if else if 时注意判定大小顺序
+      //   	思考：是否可以使用switch完成本题目
+      // var grade = prompt('请输入分数：')
+      // if (grade <= 100 && grade >= 90) {
+      //   alert('等级A')
+      // } else if (grade < 90 && grade >= 80) {
+      //   alert('等级B')
+      // } else if (grade < 80 && grade >= 70) {
+      //   alert('等级C')
+      // } else if (grade < 70 && grade >= 60) {
+      //   alert('等级D')
+      // } else if (grade < 60 && grade >= 0) {
+      //   alert('等级E')
+      // } else {
+      //   alert('请输入合法的成绩')
+      // }
+      // switch
+      // switch (true) {
+      //   case grade <= 100 && grade >= 90:
+      //     alert('等级A')
+      //     break
+      //   case grade < 90 && grade >= 80:
+      //     alert('等级B')
+      //     break
+      //   case grade < 80 && grade >= 70:
+      //     alert('等级C')
+      //     break
+      //   case grade < 70 && grade >= 60:
+      //     alert('等级D')
+      //     break
+      //   case grade < 60 && grade >= 0:
+      //     alert('等级E')
+      //     break
+      //   default:
+      //     alert('请输入合法的成绩')
+      // }
+
+      //       - 题目描述：
+      //   - 把1-100之间所有能够被3和7同时整除的数找出来，计算累加和
+      // - 题目提示：
+      //   - 在算入累加和之前，使用%判定遍历到的数字是不是可以被3和7整除
+      // var sum = 0
+      // for (var i = 1; i < 100; i++) {
+      //   console.log(i)
+      //   if (i % 3 == 0 || i % 7 == 0) {
+      //     sum += i
+      //   }
+      // }
+      // console.log('i', i)
+      // console.log('sum', sum)
+
+      //       - 题目描述：
+      //   - 在控制台一次性打印形状如下：
+      // ☆
+      // ☆☆
+      // ☆☆☆
+      // ☆☆☆☆
+      // ☆☆☆☆☆
+      // - 题目提示：
+      //   - 利用双重for循环
+      // 正三角形
+      // var str = ''
+      // for (var i = 1; i <= 5; i++) {
+      //   // console.log('i', i)
+      //   for (var j = 1; j <= i; j++) {
+      //     // console.log('j', j)
+      //     str += '☆'
+      //   }
+      //   str += '\n'
+      // }
+      // console.log(str)
+      // 倒三角形
+      // for (var i = 1; i <= 5; i++) {
+      //   for (var j = 5; j >= i; j--) {
+      //     str += '☆'
+      //   }
+      //   str += '\n'
+      // }
+      // console.log(str)
+
+      //       - 题目描述：
+      //   - 使用for循环，打印99乘法表
+      //   - 在控制台打印具体效果如下：
+      //     1×1=1
+      // 1×2=2	2×2=4
+      // 1×3=3	2×3=6	3×3=9
+      // 1×4=4	2×4=8	3×4=12	4×4=16
+      // 1×5=5	2×5=10	3×5=15	4×5=20	5×5=25
+      // 1×6=6	2×6=12	3×6=18	4×6=24	5×6=30	6×6=36
+      // 1×7=7	2×7=14	3×7=21	4×7=28	5×7=35	6×7=42	7×7=49
+      // 1×8=8	2×8=16	3×8=24	4×8=32	5×8=40	6×8=48	7×8=56	8×8=64
+      // 1×9=9	2×9=18	3×9=27	4×9=36	5×9=45	6×9=54	7×9=63	8×9=72	9×9=81
+      // - 题目提示：
+      //   - 利用双重for循环
+      // var str = ''
+      // for (var i = 1; i <= 9; i++) {
+      //   for (var j = 1; j <= i; j++) {
+      //     str += j + 'x' + i + '=' + i * j + '\t'
+      //   }
+      //   str += '\n'
+      // }
+      // console.log(str)
+
+      //       - 题目描述：
+      //   - 接收用户输入的用户名和密码，若用户名为 “admin” ,且密码为 “123456” ,则提示用户登录成功!  否则，让用户一直输入。
+      // - 题目提示：
+      //   - 利用while循环或者do while 循环
+      // while
+      // var username = prompt('请输入用户名：')
+      // var password = prompt('请输入密码：')
+      // while (username != 'admin' || password != '123456') {
+      //   alert('登录失败！')
+      //   var username = prompt('请输入用户名：')
+      //   var password = prompt('请输入密码：')
+      // }
+      // alert('登录成功!')
+      // do-while
+      // do {
+      //   var username = prompt('请输入用户名：')
+      //   var password = prompt('请输入密码：')
+      //   if (username != 'admin' || password != '123456') {
+      //     alert('登录失败！')
+      //   }
+      // } while (username != 'admin' || password != '123456')
+      // alert('登录成功！')
+
+      //       - 题目描述：
+      //   - 求整数1～100的累加值，但要求跳过所有个位为3的数。
+      // - 题目提示：
+      //   - 使用%判个位数是否为3
+      //   - 用continue实现
+      // var sum = 0
+      // for (var i = 1; i <= 100; i++) {
+      //   if (i % 10 == 3) {
+      //     continue
+      //   }
+      //   sum += i
+      //   // console.log(sum)
+      // }
+      // console.log(sum)
+
+      // 写一个函数，能判断传入的一个数值是否是质数，如果是质数返回true，如果不是质数返回false，(质数：从2开始只能被1和自身整数的数)
+      // function isOnly(num) {
+      //   for (var i = 2; i < num; i++) {
+      //     if (num % i == 0) {
+      //       return false
+      //     }
+      //   }
+      //   return true
+      // }
+      // console.log(isOnly(7))
+
+      // function check(num) {
+      //     var flag = true;
+      //     for (var i = 2; i < num; i++) {
+      //         if (num % i == 0) {
+      //             flag = false;
+      //         }
+      //     }
+      //     return flag;
+      // }
+
+      // 写一个函数，能翻转传入的任意数组，并把翻转结果通过返回值返回。
+      // function reverseArr(arr) {
+      //   for (var i = 0; i <= arr.length - 1; i++) {
+      //     if (i > (arr.length - 1) / 2) {
+      //       break
+      //     }
+      //     var temp = 0
+      //     temp = arr[i]
+      //     arr[i] = arr[arr.length - 1 - i]
+      //     arr[arr.length - 1 - i] = temp
+      //   }
+      //   return arr
+      // }
+      // var arr = [1, 2, 3, 4]
+      // console.log(reverseArr(arr))
+
+      // function reverse(arr) {
+      //     var newArr = [];
+      //     for (var i = arr.length - 1; i >= 0; i--) {
+      //         newArr[newArr.length] = arr[i]
+      //     }
+      //     return newArr;
+      // }
+
+      // 写一个函数，能对所有传入的数组按照从小到大进行排序，并把排序结果通过返回值返回
+      // function upArr(arr) {
+      //   for (var i = 0; i <= arr.length - 1; i++) {
+      //     for (var j = 0; j <= i; j++) {
+      //       var temp = 0
+      //       if (arr[j] > arr[j + 1]) {
+      //         temp = arr[j]
+      //         arr[j] = arr[j + 1]
+      //         arr[j + 1] = temp
+      //       }
+      //     }
+      //   }
+      //   return arr
+      // }
+      // var arr = [1, 5, 9, 3, 18, 16, 494, 11, 61]
+      // console.log(upArr(arr))
+
+      //     书写一个函数，判断指定数据是否存在于指定数组中
+      //     要求：
+      // 函数名称：exist
+      // 函数调用方式：exist(数据data，数组arr)
+      // 函数功能：判断“数据data”是否存在于“数组arr”中，如果是函数返回值为true，如果不是函数返回值为false
+      // function exist(data, arr) {
+      //   if (arr.indexOf(data) != -1) {
+      //     return true
+      //   } else {
+      //     return false
+      //   }
+      // }
+      // var arr = [1, 2, 3, 4, 5, 6, 7]
+      // console.log(exist(5, arr))
+
+      // 以下有两个数组，一个数组arr是班级里所有的学员的名称，一个数组currentArr是提交了每日反馈的学员名单，请创建一种算法，把未提交每日反馈的学员筛选出来
+      // function isSubmit(arr, currentArr) {
+      //   var newArr = []
+      //   for (var i = 0; i <= arr.length - 1; i++) {
+      //     if (currentArr.indexOf(arr[i]) == -1) {
+      //       newArr[newArr.length] = arr[i]
+      //     }
+      //   }
+      //   return newArr
+      // }
+      // var arr = [
+      //   '张瑞淑',
+      //   '徐海涛',
+      //   '谢岗岗',
+      //   '薛鹏',
+      //   '魏明杨',
+      //   '党婷',
+      //   '熊飞',
+      //   '郑翠翠',
+      //   '李航卫',
+      //   '屈涛',
+      //   '汪孝双',
+      //   '代攀飞',
+      //   '武志钰',
+      //   '王亚龙',
+      //   '周芙榕',
+      //   '李涛',
+      //   '郝颖',
+      //   '文冲洋',
+      //   '王旭拯',
+      //   '胡佳豪',
+      //   '寇晓丽',
+      //   '马晓晗',
+      //   '王思聪',
+      //   '张绿',
+      //   '李德',
+      //   '郑萍',
+      //   '张凯',
+      //   '张嘉成',
+      //   '葛云侠',
+      //   '杨磊',
+      //   '任变',
+      //   '景德',
+      //   '高卷林',
+      //   '刘益凡',
+      //   '赵娜',
+      //   '陈章鸣',
+      //   '张荣召',
+      //   '赵凯旋',
+      //   '程倩倩',
+      //   '脱朝平',
+      //   '刘吉利',
+      //   '郭苗苗',
+      //   '马建峰',
+      //   '潘瑞',
+      //   '闫翔',
+      //   '马晨',
+      //   '李轩轩',
+      //   '黄红梅',
+      //   '刘书彬',
+      //   '罗强',
+      //   '刘东',
+      //   '王可可',
+      //   '陈泽文',
+      //   '李嘉琪',
+      //   '段佳琦',
+      //   '黄燕',
+      //   '邱淑鸿',
+      //   '宋翔宇',
+      //   '王波',
+      //   '樊琳',
+      //   '王兆国',
+      //   '许成',
+      //   '李兴',
+      // ]
+      // var currentArr = [
+      //   '张瑞淑',
+      //   '徐海涛',
+      //   '谢岗岗',
+      //   '薛鹏',
+      //   '魏明杨',
+      //   '党婷',
+      //   '熊飞',
+      //   '郑翠翠',
+      //   '李航卫',
+      //   '屈涛',
+      //   '汪孝双',
+      //   '代攀飞',
+      //   '武志钰',
+      //   '王亚龙',
+      //   '周芙榕',
+      //   '李涛',
+      //   '郝颖',
+      //   '文冲洋',
+      //   '王旭拯',
+      //   '胡佳豪',
+      //   '寇晓丽',
+      //   '马晓晗',
+      //   '张绿',
+      //   '李德',
+      //   '郑萍',
+      //   '张凯',
+      //   '张嘉成',
+      //   '葛云侠',
+      //   '杨磊',
+      //   '任变',
+      //   '景德',
+      //   '高卷林',
+      //   '刘益凡',
+      //   '赵娜',
+      //   '陈章鸣',
+      //   '张荣召',
+      //   '赵凯旋',
+      //   '程倩倩',
+      //   '脱朝平',
+      //   '刘吉利',
+      //   '郭苗苗',
+      //   '马建峰',
+      //   '潘瑞',
+      //   '闫翔',
+      //   '马晨',
+      //   '李轩轩',
+      //   '黄红梅',
+      //   '刘书彬',
+      //   '罗强',
+      //   '刘东',
+      //   '陈泽文',
+      //   '李嘉琪',
+      //   '段佳琦',
+      //   '黄燕',
+      //   '邱淑鸿',
+      //   '宋翔宇',
+      //   '王波',
+      //   '樊琳',
+      //   '王兆国',
+      //   '许成',
+      //   '李兴',
+      // ]
+      // console.log(isSubmit(arr, currentArr))
+      // console.log(arr.length, currentArr.length)
+
+      //       题目描述：把下面数组的首尾两个元素互换
+      // var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"];
+      // var arr = [
+      //   '鹿晗',
+      //   '王俊凯',
+      //   '蔡徐坤',
+      //   '彭于晏',
+      //   '周杰伦',
+      //   '刘德华',
+      //   '赵本山',
+      // ]
+      // var first = arr.shift()
+      // var last = arr.pop()
+      // arr.push(first)
+      // arr.unshift(last)
+      // console.log(arr)
+
+      // 计算指定日期是今年的第几天
+      //     题目描述：制作一个函数，getDayNum( 年月日日期 )，可以返回指定日期是当前年的第几天
+      // 例：  getDayNum( “2019-1-2”)    返回值为：2
+
+      // function getDayNum(endDay) {
+      //   var startDay = new Date('2021-2-11')
+      //   var endDay = new Date(endDay)
+      //   var day = (endDay - startDay) / 1000 / 60 / 60 / 24 + 1
+      //   // var day = Math.floor((endDay - startDay) / 1000 / 60 / 60 / 24) + 1
+      //   return day
+      // }
+      // // var now = new Date()
+      // // console.log(getDayNum(now))
+      // console.log(getDayNum('2021-5-20'))
+
+      // 16进制随机颜色
+      //       题目描述：使用Math对象，制作一个16进制的随机颜色
+      // 题目提示：16进制包括 “ 0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F ”
+      // 例： “#f23a4b”
+      // function getRandom(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1)) + min
+      // }
+
+      // function randomColor() {
+      //   var str = '0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F'
+      //   var arr = str.split('  ')
+      //   // console.log(arr)
+      //   var randomColor = []
+      //   for (var i = 1; i <= 6; i++) {
+      //     randomColor.push(arr[getRandom(0, arr.length - 1)])
+      //   }
+      //   var color = '#' + randomColor.join('')
+      //   return color
+      // }
+      // console.log(randomColor())
+
+      // function randomColor() {
+      //   var str = '0  1  2  3  4  5  6  7  8  9  A  B  C  D  E  F'
+      //   var arr = str.split('  ')
+      //   // console.log(arr)
+      //   var randomColor = '#'
+      //   for (var i = 1; i <= 6; i++) {
+      //     randomColor += arr[getRandom(0, arr.length - 1)]
+      //   }
+      //   return randomColor
+      // }
+      // console.log(randomColor())
+
+      // var arr = [
+      //   '0',
+      //   '1',
+      //   '2',
+      //   '3',
+      //   '4',
+      //   '5',
+      //   '6',
+      //   '7',
+      //   '8',
+      //   '9',
+      //   'A',
+      //   'B',
+      //   'C',
+      //   'D',
+      //   'E',
+      //   'F',
+      // ]
+      // var str = '#'
+      // for (var i = 0; i < 6; i++) {
+      //   str += arr[getRandom(0, arr.length - 1)]
+      // }
+      // console.log(str)
+
+      // 字符串操作
+      // 字符串：“abaasdffggghhjjkkgfddsssss3444343”，问题如下：
+      // 1、 字符串的长度
+      // var str = 'abaasdffggghhjjkkgfddsssss3444343'
+      // console.log(str.length)
+
+      // 2、 取出指定位置的字符，如：0,3,5,9等
+      // console.log(str.charAt(0))
+      // console.log(str.charAt(3))
+      // console.log(str.charAt(5))
+      // console.log(str.charAt(6))
+
+      // 3、 查找指定字符是否在以上字符串中存在，如：i，c ，b等
+      // function strHave(char) {
+      //   if (str.indexOf(char) == -1) {
+      //     return '您查找的字符不存在'
+      //   } else {
+      //     return (
+      //       '您查找的字符首次出现在第' + (str.indexOf(char) + 1) + '个位置上'
+      //     )
+      //   }
+      // }
+      // console.log(strHave('i'))
+      // console.log(strHave('c'))
+      // console.log(strHave('b'))
+
+      // 4、 替换指定的字符，如：g替换为22,ss替换为b等操作方法
+      // function replaceAll(char, reChar) {
+      //   while (str.indexOf(char) != -1) {
+      //     str = str.replace(char, reChar)
+      //   }
+      //   return str
+      // }
+      // console.log(replaceAll('g', '22'))
+      // console.log(replaceAll('ss', 'b'))
+
+      // 5、 截取指定开始位置到结束位置的字符串，如：取得1-5的字符串
+      // console.log(str.slice(1, 5))
+
+      // 6、 找出以上字符串中出现次数最多的字符和出现的次数
+      // var o = {}
+      // for (var i = 0; i < str.length - 1; i++) {
+      //   var chars = str.charAt(i)
+      //   if (o[chars]) {
+      //     o[chars]++
+      //   } else {
+      //     o[chars] = 1
+      //   }
+      // }
+      // var max = 0
+      // var ch = ''
+      // for (var k in o) {
+      //   if (o[k] > max) {
+      //     max = o[k]
+      //     ch = k
+      //   }
+      // }
+      // console.log(max)
+      // console.log('最多的字符是' + ch)
+
+      // 7、 遍历字符串，并将遍历出的字符两头添加符号“@”
+      // for (var i = 0; i <= str.length - 1; i++) {
+      //   var chars = str.charAt(i)
+      //   console.log('@' + chars + '@')
+      // }
+      // 随机选学员
+      // 从以下学员名单中随机选出4个学员：
+      // var arr = [
+      //   '鹿晗',
+      //   '王俊凯',
+      //   '蔡徐坤',
+      //   '彭于晏',
+      //   '周杰伦',
+      //   '刘德华',
+      //   '赵本山',
+      // ]
+      // 注意：不要有重复的学员
+
+      // function getRandom(min, max) {
+      //   return Math.floor(Math.random() * (max - min + 1)) + min
+      // }
+
+      // function randomStudents(arr) {
+      //   var newArr = []
+      //   while (newArr.length != 4) {
+      //     var randomNum = getRandom(0, arr.length - 1)
+      //     if (newArr.indexOf(arr[randomNum]) == -1) {
+      //       newArr[newArr.length] = arr[randomNum]
+      //     }
+      //   }
+      //   return newArr
+      // }
+      // console.log(randomStudents(arr))
+
+      // 随机排序
+      // 对以下学员随机排序，生成一个新数组：
+      // var arr = ["鹿晗","王俊凯","蔡徐坤","彭于晏","周杰伦","刘德华","赵本山"]
+      // function sortStudents(arr) {
+      //   var newArr = []
+      //   while (newArr.length != arr.length) {
+      //     var randomNum = getRandom(0, arr.length - 1)
+      //     if (newArr.indexOf(arr[randomNum]) == -1) {
+      //       newArr[newArr.length] = arr[randomNum]
+      //     }
+      //   }
+      //   return newArr
+      // }
+
+      // console.log(sortStudents(arr))
+    </script>
+  </head>
+  <body></body>
+</html>
