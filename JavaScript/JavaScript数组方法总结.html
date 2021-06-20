@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // var arr = ['a', 'r', 'n', 'o', 5, 1, 9]
+
+      // 检测数组 instanceof & Array.isArray()
+      // 判断一个对象是不是数组，是返回true，不是返回false
+      // console.log(arr instanceof Array) //true
+      // console.log(Array.isArray(arr)) //true
+
+      // 转换方法 toString() & toLocalString() & valueOf() & join() 不会改变原数组
+      // toString() & toLocalString()会将数组转换为字符串，并用','分隔数组的每一项，
+      // console.log(arr.toString()) //a,r,n,o,5,1,9
+      // console.log(arr.toLocaleString()) //a,r,n,o,5,1,9
+      // valueOf()方法会返回数组本身
+      // console.log(arr.valueOf()) //["a", "r", "n", "o", 5, 1, 9]
+      // join()方法只接收一个参数，并将该参数作为分隔符，返回包含所有数组项的字符串
+      // console.log(arr.join('|')) //a|r|n|o|5|1|9
+
+      // 添加删除方法 push() & pop() & shift() & unshift() 会改变原数组
+      // push()接收多个参数，将参数逐个添加到数组末尾,并返回修改后的数组长度
+      // console.log(arr.push('GO','GO','GO')) //10
+      // console.log(arr) //["a", "r", "n", "o", 5, 1, 9, "GO", "GO", "GO"]
+      // pop()移除数组最后一项，并返回移除的项
+      // console.log(arr.pop()) //9
+      // unshift()接收多个参数，将参数逐个添加到数组前端,并返回修改后的数组长度
+      // console.log(arr.unshift('GO','GO','GO')) //10
+      // shift()移除数组第一项，并返回移除的项
+      // console.log(arr.shift()) //a
+
+      // 重排序方法 reverse() & sort() 会改变原数组
+      // reverse()返回颠倒后的数组
+      // console.log(arr.reverse()) //[9, 1, 5, "o", "n", "r", "a"]
+      // sort() 升序或者降序排序数组，可以接收一个比较函数作为参数，以便指定升序或者降序
+      // 默认情况下sort()方法按升序排序数组,但是由于在默认情况下sort()方法会调用每个数组项的toString()转型方法，然后比较得到的字符串，所以可能会导致排序错误发生
+      // console.log(arr.sort()) //[1, 5, 9, "a", "n", "o", "r"]
+      // 出现上述情况，是因为在数字与无法转换为数字的字符串比较时，由于字符串无法转换为数字，只能转换为NaN，所以数字排在前面，而无法转换为数字的字符串之间的比较是通过ASCII码来进行比较的
+      // var arr = [1, 5, 10, 15, 20]
+      // console.log(arr.sort()) //[1, 10, 15, 20, 5]
+      // 出现以上问题，是由于JavaScript的字符串比较方式导致的，JavaScript的字符串大小比较，是从左至右对应比较的，由于'5'>'10'>'15'>'20'，所以5排在最后
+      // console.log(
+      //   arr.sort(function(value1, value2) {
+      //     return value1 - value2
+      //   })
+      // ) // ["a", "r", "n", "o", 1, 5, 9]
+      // 但由于无法转换为数字的字符串-无法转换为数字的字符串=NaN，所以该数组的前四项顺序不变
+      // 升序排序，如果参数1>参数2，则会返回一个正数，那么参数1就会位于参数2之后，如果参数1<参数2，则会返回一个负数，那么参数1就会位于参数2之前
+      // console.log(
+      //   arr.sort(function(value1, value2) {
+      //     return value2 - value1
+      //   })
+      // ) //["a", "r", "n", "o", 9, 5, 1]
+      // 降序排序，与升序排序同理
+
+      // 操作方法 concat() & slice() & splice()
+      // concat()可以接收多个参数，参数可以是单个字符串，也可以是数组,变量名亦可，concat()可以基于当前数组的所有项创建一个新数组,不会改变原数组
+      // var arr2 = ['GO', 'GO', 'GO']
+      // console.log(arr.concat(arr2, ['!', '!'], '!')) //["a", "r", "n", "o", 5, 1, 9, "GO", "GO", "GO", "!", "!", "!"]
+      // console.log(arr)
+
+      // slice()可以接收一个或两个参数，如果只有一个参数，slice()方法返回从指定位置开始到数组末尾所有的项，如果有两个参数，该方法返回起始位置和结束位置之间的项，但不包含结束位置的项,不会改变原数组
+      // console.log(arr.slice(2)) //["n", "o", 5, 1, 9]
+      // console.log(arr)
+      // console.log(arr.slice(2, 4)) //["n", "o"]
+      // 该数组的第四项为'1'
+
+      // splice()可以接收两个或多个参数， 第一个参数为要删除的第一项的位置，第二个参数为要删除的项数，之后的参数为插入的项,该方法始终会返回一个包含从原始数组中删除的项的数组，如果没有删除任何项，则为空数组，会改变原数组
+      // console.log(arr.splice(2, 2)) //["n", "o"]
+      // console.log(arr)
+      // var arr2 = ['GO', 'GO', 'GO']
+      // console.log(arr.splice(arr.length, 0, arr2)) //[]
+      // console.log(arr) // ["a", "r", "n", "o", 5, 1, 9, ['GO', 'GO', 'GO']]
+      // 这里有一个需要注意的问题，如果传入的参数是非字符串，那么splice()也会将该参数当作是一个单独的数组项插入原数组
+
+      // 位置方法 indexOf() & lastIndexOf()
+      // 这两个方法都接收两个参数，要查找的项和查找起点位置的索引，如果查找到了该项，则返回该项在数组中的位置，否则返回-1
+      // 需要注意的是，在查找的过程中，会使用全等操作符===
+      // var arr = arr.concat(arr)
+      // console.log(arr)
+      // console.log(arr.indexOf('o')) //3
+      // console.log(arr.indexOf('o', 4)) //10
+      // console.log(arr.indexOf('5')) //-1
+      // lastIndexOf()和indexOf()的唯一区别是该方法会从数组的末尾开始向前查找
+
+      // 迭代方法 some() & every() & filter() & forEach() & map()
+      // some()对数组中的每一项运行给定函数，如果该函数任一项返回true,则返回true
+      // item当前元素的值，index当前元素的索引值，array当前元素的数组对象
+      // console.log(
+      //   arr.some(function(item, index, array) {
+      //     // console.log(array)
+      //     return item > 5
+      //     // return array > 5
+      //   })
+      // ) //true
+
+      // every()对数组中的每一项运行给定函数，如果该函数对每一项都返回true,则返回true
+      // console.log(
+      //   arr.every(function(item, index, array) {
+      //     return item > 5
+      //   })
+      // ) //false
+
+      // filter()对数组中的每一项运行给定函数，返回该函数会返回true的项组成的数组
+      // console.log(
+      //   arr.filter(function(item, index, array) {
+      //     return item > 5
+      //   })
+      // ) //[9]
+
+      // forEach()对数组中的每一项运行给定函数，无返回值
+      // console.log(
+      //   arr.forEach(function(item, index, array) {
+      //     // 执行各种操作
+      //     // console.log(item, index, array)
+      //   })
+      // ) //undefined
+      // console.log(arr)
+
+      // map()对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组
+      // console.log(
+      //   arr.map(function(item, index, array) {
+      //     return item * 2
+      //   })
+      // ) //[NaN, NaN, NaN, NaN, 10, 2, 18]
+
+      // 归并方法 reduce() & reduceRight()
+      // 这两个方法都会迭代数组的所有项，然后构建一个最终返回的值，其实reduce()从数组的第一项开始，逐个遍历到最后，reduceRight()则相反
+      // 这两个方法接收两个参数，一个在每一项上调用的函数和作为归并基础的初始值
+      // 给reduce()和reduceRight()的函数接收四个参数，前一个值、当前值、项的索引、数组对象
+      // 这个函数返回的任何值都会作为第一个参数自动传给下一项
+      // 第一次迭代发生在数组的第二项上，因此第一个参数是数组的第一项，第二个参数为数组的第二项
+      // console.log(
+      //   arr.reduce(function(prev, cur, index, array) {
+      //     return prev + cur
+      //   })
+      // ) //arno519
+
+      // ES6
+
+      // 拓展运算符 ... 可以展开数组,将数组转换为参数序列
+      // console.log(...arr) //a r n o 5 1 9
+      // var arr2 = ['GO', 'GO', 'GO']
+      // arr.splice(arr.length, 0, ...arr2)
+      // console.log(arr) // ["a", "r", "n", "o", 5, 1, 9, "GO", "GO", "GO"]
+      // 这里需要注意的是，只有在函数调用时，拓展运算符才可以放在圆括号里，否则会报错
+
+      // 遍历方式 for...of
+
+      // from() 可以将类似数组的对象和可遍历的对象转换为真正的数组
+      // var obj = {
+      //   0: 1,
+      //   1: 2,
+      //   2: 3,
+      //   length: 3,
+      // }
+      // console.log(Array.from(obj)) //[1, 2, 3]
+      // // 这里需要注意的是一定要给定length属性，否则为空数组
+
+      // // of() 可以将一组值转换为数组
+      // console.log(Array.of('a', 'r', 'n', 'o')) // ["a", "r", "n", "o"]
+      // // of()总是会返回参数值组成的数组，如果没有参数，则返回空数组
+      // console.log(Array.of()) //[]
+
+      // copyWithin(target, start, end) 在当前数组内部，将指定位置的成员，复制到其他位置，然后返回当前数组
+      // target 从该位置开始替换数据，如果为负值，表示倒数，start 从该位置开始读取数据，默认为 0,如果为负值，表示从末尾开始计算，end 到该位置前停止读取数据，默认等于数组长度。如果为负值，表示从末尾开始计算
+      // console.log(arr.copyWithin(4, 0)) // ["a", "r", "n", "o", "a", "r", "n"]
+      // console.log(arr) //["a", "r", "n", "o", "a", "r", "n"]
+      // find() & findIndex()
+      // find()用于找出第一个符合条件的数组，传入一个回调函数，数组的所有项执行该回调函数，直到找到第一个符合条件的项并返回该项，如果没有符合条件的项，则返回undefined
+      // console.log(
+      //   arr.find(function (n) {
+      //     return n > 5
+      //   })
+      // ) //9
+      // findIndex()与find()类似，不同的是，findIndex()返回第一个符合条件的索引，如果没有符合条件的数组项，则返回-1
+      // console.log(
+      //   arr.findIndex(function (n) {
+      //     return n > 5
+      //   })
+      // ) //6
+
+      // fill(value,start,end) 使用给定值，填充一个数组,并返回填充后的数组
+      // value填充值，start起始位置,end结束位置
+      // console.log(arr.fill('GO', 4, arr.length)) //["a", "r", "n", "o", "GO", "GO", "GO"]
+      // console.log(arr)
+
+      //  keys() & values() & entries()
+      // 这三个方法都用于遍历数组，并返回一个遍历器对象，唯一的区别是keys()是对键名的遍历、values()是对键值的遍历，entries()是对键值对的遍历
+      // for (var index of arr.keys()) {
+      //   console.log(index)
+      // }
+      // 0
+      // 1
+      // 2
+      // 3
+      // 4
+      // 5
+      // 6
+
+      // for (var elem of arr.values()) {
+      //   console.log(elem)
+      // }
+      // a
+      // r
+      // n
+      // o
+      // 5
+      // 1
+      // 9
+
+      // for (var [index, elem] of arr.entries()) {
+      //   console.log(index, elem)
+      // }
+      // 0 a
+      // 1 r
+      // 2 n
+      // 3 o
+      // 4 5
+      // 5 1
+      // 6 9
+      // 如果只给一个参数，则逐个返回数组形式的键值对
+      // for (var i of arr.entries()) {
+      //   console.log(i)
+      // }
+      // [0, "a"]
+      // [1, "r"]
+      // [2, "n"]
+      // [3, "o"]
+      // [4, 5]
+      // [5, 1]
+      // [6, 9]
+
+      // ES7
+
+      // includes()用于检测数组中是否包含给定的值，如果有则返回true，无则返回false
+      // console.log(arr.includes('a')) //true
+      // includes()可以解决indexOf()对NaN的误判问题
+
+      // ES10
+
+      // flat() & flatMap()
+      // flat()可以将嵌套的数组中的子数组取出并添加在原来的位置
+      // var arr2 = [1, 2, 3, [4, 5, 6, [7, 8, 9]]]
+      // console.log(arr2.flat()) //[1, 2, 3, 4, 5, 6, [7, 8, 9]]
+      // // 在默认的情况下，该数组只取出第一层子数组，如果想取出多层，可以加一个参数来指定需要取出的层数
+      // console.log(arr2.flat(2)) //[1, 2, 3, 4, 5, 6, 7, 8, 9]
+      // console.log(arr2)
+      // 如果数组中有空位，flat()方法会跳过空位
+      // console.log([1, 2, , 4, 5].flat()) //[1, 2, 4, 5]
+
+      // // flatMap()可以对原数组的每一个成员执行一个函数然后对返回值组成的数组执行flat()方法，该方法返回一个新数组，不改变原数组
+      // // console.log(
+      // //   [1, 2, 3, [4, 5, 6, [7, 8, 9]]].flatMap(function (i) {
+      // //     return i * 2
+      // //   })
+      // // ) //[2, 4, 6]
+      // var arr1 = [1, 2, 3, 4]
+      // console.log(arr1.flatMap((x) => [x * 2]))
+      // // [2, 4, 6, 8]
+      // console.log(arr1.flatMap((x) => [[x * 2]]))
+      // [[2], [4], [6], [8]]
+      // flatMap()只能展开一层数组
+      // arr.flatMap(function callback(currentValue[, index[, array]]) {
+      //   // ...
+      // }[, thisArg])
+      // 可以生成一个新数组中的元素的函数，可以传入三个参数：currentValue 当前正在数组中处理的元素、index 数组中正在处理的当前元素的索引，array 被调用的 map 数组，thisArg，遍历函数 this 的指向
+    </script>
+  </head>
+  <body></body>
+</html>
