@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // var str = 'abcabcabc'
+      // 字符方法 charAt() & charCodeAt()
+      // charAt()和charCodeAt()都用于访问字符串中特定字符，都接收一个基于0的字符位置的参数
+      // 不同的是charAt()以单字符字符串的形式返回给定位置的那个字符，而charCodeAt()返回字符编码
+      // console.log('abcdef'.charAt(3)) //d
+      // console.log('abcdef'.charCodeAt(3)) //100
+
+      // 如果传入的是一个非数字参数，charAt()会直接返回被检测字符串的第一个字符，而charCodeAt()则会返回呗检测字符串的一个字符的字符编码。
+      // console.log('abcdef'.charAt('3')) //d
+      // console.log('abcdef'.charCodeAt('3')) //100
+      // console.log('abcdef'.charAt('a')) //a
+      // console.log('abcdef'.charCodeAt('a')) //97
+
+      // 操作方法 concat() & slice() & substr() & subString()
+      // concat()可以一个或多个参数，并将其拼接起来，返回拼接得到的新字符串
+      // console.log('abc'.concat('def')) //abcdef
+
+      // slice() & substr() & subString()都接收一个或两个参数，并返回被操作字符串的一个子字符串
+      // 这三个方法的第一个参数都是指定子字符串的开始位置，第二个参数有所不同
+      // slice()和substring()的第二个参数指定的是子字符串最后一个字符后面的位置
+      // substr()的第二个参数指定的则是返回的字符个数
+      // console.log('abcdef'.slice(1, 3)) //bc
+      // console.log('abcdef'.substring(1, 3)) //bc
+      // console.log('abcdef'.substr(1, 3)) //bcd
+      // 在未指定第二个参数的情况下，这三个方法都会默认将字符串的末尾作为结束位置
+      // console.log('abcdef'.slice(1)) //bcdef
+      // console.log('abcdef'.substring(1)) //bcdef
+      // console.log('abcdef'.substr(1)) //bcdef
+
+      // 在传递负值的情况下
+      // slice()会将传入的负值与字符串的长度相加
+      // console.log('abcdef'.slice(-2)) //ef
+      // console.log('abcdef'.slice(-4, -2)) //cd
+      // 即相当于传入了4
+      // console.log('abcdef'.slice(4)) //ef
+      // console.log('abcdef'.slice(2, 4)) //cd
+
+      // substr()会将负的第一个参数加上字符串的长度，而将第二个参数转换为0
+      // console.log('abcdef'.substr(-2)) //ef
+      // console.log('abcdef'.substr(-2, -2)) //空字符串
+
+      // substring()会将所有负值转换为0
+      // console.log('abcdef'.substring(-2)) //abcdef
+      // console.log('abcdef'.substring(-2, -2)) //空字符串
+
+      // 在参数一>参数二的情况下，slice,substr会直接返回空字符串
+      // 注意，substring()会将较小的数作为开始位置，将较大的数作为结束位置
+      // console.log('abcdef'.slice(2, 0)) //空字符串
+      // console.log('abcdef'.substr(2, 0)) //空字符串
+      // console.log('abcdef'.substring(2, 0)) //ab
+
+      // 位置方法 indexOf() & lastIndexOf()
+      // 这两个方法都是从字符串中搜索给定的子字符串，然后返回子字符串的位置，如果没有找到该子字符串，则返回-1
+      // 这两个方法的区别在于indexOf()是从字符串的开头向后搜索子字符串的，而lastIndexOf()相反
+      // console.log('abcabc'.indexOf('a')) //0
+      // console.log('abcabc'.lastIndexOf('a')) //3
+
+      // trim()
+      // trim()会创建一个字符串的副本，删除前置及后缀的所有空格，并返回结果
+      // console.log(' a  b  c  '.trim()) //a  b  c
+      // toLocaleLowerCase()和toLocaleUpperCase()旨在基于特定地区实现
+      // 字符串大小写转换方法 toLowerCase() & toLocaleLowerCase() & toUpperCase() & toLocaleUpperCase()
+      // toLowerCase()和toLocaleLowerCase()是将大写转换为小写的方法
+      // toUpperCase()toLocaleUpperCase()是将小写转换为大写的方法
+      //
+      // console.log('abcdef'.toLowerCase()) //abcdef
+      // console.log('ABCDEF'.toLowerCase()) //abcdef
+      // console.log('abcdef'.toLocaleLowerCase()) //abcdef
+      // console.log('ABCDEF'.toLocaleLowerCase()) //abcdef
+      // console.log('abcdef'.toUpperCase()) //ABCDEF
+      // console.log('ABCDEF'.toUpperCase()) //ABCDEF
+      // console.log('abcdef'.toLocaleUpperCase()) //ABCDEF
+      // console.log('ABCDEF'.toLocaleUpperCase()) //ABCDEF
+
+      // 字符串的模式匹配方法 match() & search() & replace() & split()
+      // match()
+      // match()方法接收一个参数，可以是一个正则表达式字符串，也可以是一个RegExp对象，返回一个数组，其中存放匹配的结果。如果未找到匹配，则返回值为 null。
+      // console.log('abcabc'.match(/a/)) //0
+      // search()
+      // search()方法唯一的参数个match()方法一样，区别在于该方法返回模式第一个匹配的位置索引，如果没找到则返回-1
+      // 该方法始终从字符串开头向后匹配模式
+      // console.log('abcabc'.search(/a/)) //0
+      // replace()
+      // replace()能够执行字符串的替换操作，接收两个参数，第一个参数为RegExp对象或一个字符串(要替换的字符)，第二个参数可以是一个字符串(替换文本)或函数，返回一个执行替换操作后的字符串
+      // console.log('abcabc'.replace('a', 'x')) //xbcabc
+      // console.log('abcabc'.replace(/a/g, 'x')) //xbcxbc
+      // 如果第二个参数为函数，当匹配开始执行时，该函数就会执行，函数的返回值作为替换的字符串,该函数会传递3个参数：模式的匹配项、模式匹配项在字符串中的位置和原始字符串。
+      // console.log(
+      //   'abcabc'.replace(/a/g, function (match, pos, originalText) {
+      //     console.log(match, 'match')
+      //     console.log(pos, 'pos')
+      //     console.log(originalText, 'originalText')
+      //     return 'x'
+      //   })
+      // ) //xbcxbc
+      // split()
+      // split()可以基于指定的分隔符将一个字符串分割成多个子字符串，并将结果放在一个数组中
+      // 分隔符可以是字符串，也可以是一个RegExp对象
+      // 该方法可以选择接受第二个参数，用于指定数组的大小
+      // console.log('a,b,c'.split(',')) //["a", "b", "c"]
+      // console.log('a,b,c'.split(',', 2)) //["a", "b"]
+      // console.log('a,b,c'.split(/,/)) //["a", "b", "c"]
+
+      // localeCompare()
+      // 这个方法比较两个字符串
+      // 如果字符串在字母表中应该排在字符串参数之前，则返回一个负数
+      // 如果字符串等于字符串参数，则返回0
+      // 如果字符串在字母表中应该排在字符串参数之后，则返回一个正数
+      // console.log('a'.localeCompare('b')) //-1
+      // console.log('a'.localeCompare('a')) //0
+      // console.log('b'.localeCompare('a')) //1
+
+      // fromCharCode()
+      // 接受一个或多个字符编码，然后将他们转换为一个字符串
+      // 无法识别大于0xFFFF的码点
+      // console.log(String.fromCharCode(97, 98, 99, 100, 101, 102)) //abcdef
+      // HTML方法
+
+      // ES6
+      // fromCodePoint()
+      // 用于从Unicode码点返回对应字符，并且可以识别大于0xFFFF的字符
+      // console.log(String.fromCharCode(0x20BB7)) //空字符串
+      // console.log(String.fromCodePoint(0x20BB7)) //𐀀
+      // console.log(String.fromCodePoint(97, 98, 99, 100, 101, 102)) //abcdef
+
+      // raw()
+      // raw()方法返回一个斜杠都被转义的字符串
+      // 如果原字符串的斜杠已经转义，则再次转义
+      // 通常用于模板字符串
+      // console.log(String.raw`Hi\n${1 + 2}`) //Hi\n3
+
+      // codePointAt()
+      // 由于在JavaScript内部，字符以UTF-16的格式存储，每个字符固定2个字节
+      // 对于那些Unicode码点大于0xFFFF的字符，JavaScript会认为他们是两个字符
+      // charCodeAt()方法只能分别返回前两个字节和后两个字节的值，无法正确处理4个字节存储的字符，charPointAt()解决了这一问题
+      // var str = '𠮷'
+      // console.log(str.charCodeAt(0)) //55362
+      // console.log(str.charCodeAt(1)) //57271
+      // console.log(str.codePointAt(0)) //134071
+      // console.log(str.codePointAt(1)) //57271
+
+      // normalize()
+      // normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。
+
+      // includes() & startsWith() & endsWith()
+      // includes()
+      // includes()方法来判断一个字符串是否包含在另一个字符串中，返回boolean类型的值
+      // console.log('abcdef'.includes('cd')) //true
+      // startsWith()
+      // 判断参数字符串是否在原字符串的头部, 返回boolean类型的值
+      // console.log('abcdef'.startsWith('abc')) //true
+      // endsWith()
+      // 判断参数字符串是否在原字符串的尾部, 返回boolean类型的值
+      // console.log('abcdef'.endsWith('def')) //true
+
+      // repeat()
+      // repeat方法返回一个新字符串，表示将原字符串重复n次
+      // console.log('abc'.repeat(3)) //abcabcabc
+      // 如果参数为小数，则会被取整，如果为负数或者Infinity，会报错
+      // console.log('abc'.repeat(1.6)) //abc
+      // console.log('abc'.repeat(Infinity)) // RangeError
+      // console.log('abc'.repeat(-1)) // RangeError
+      // 如果参数是0到-1之间的小数或者NaN，则等同于0
+      // console.log('abc'.repeat(-0.1)) //
+      // console.log('abc'.repeat(NaN)) //
+
+      // ES8
+      // padStart() & padEnd()
+      // 这两个方法用于把指定字符串填充到字符串头部或尾部，返回新字符串
+      // padStart()用于头部补全，padEnd()用于尾部补全。padStart()和padEnd()一共接受两个参数，第一个参数是字符串补全生效的最大长度，第二个参数是用来补全的字符串
+      // console.log('abc'.padStart(6, 'x')) //xxxabc
+      // console.log('abc'.padEnd(6, 'x')) //abcxxx
+      // 如果原字符串长度等于或大于最大长度，则返回原字符串
+      // console.log('abc'.padStart(3, 'x')) //abc
+      // 如果补全字符串与原字符串长度大于最大长度，则截取补全的字符串的超出部分
+      // console.log('abc'.padStart(5, 'xxx')) //xxabc
+      // 如果省略第二个参数，则默认用空格补全长度
+      // console.log('abc'.padStart(6)) //    abc
+
+      // ES10
+      // trimStart() & trimEnd()
+      // trimStart()方法从字符串的开头删除空格，trimLeft()是此方法的别名。
+      // console.log('   abc   '.trimStart()) //abc
+      // trimEnd()
+      // trimEnd()方法从一个字符串的右端移除空白字符，trimRight 是 trimEnd 的别名
+      // console.log('   abc   '.trimEnd()) //   abc
+
+      // ES11
+      // matchAll()
+      // matchAll() 方法返回一个包含所有匹配正则表达式及分组捕获结果的遍历器，由于返回的是遍历器，所以通常使用for...of循环取出
+      // for (const match of 'abcabc'.matchAll(/a/g)) {
+      //   console.log(match)
+      // }
+      //["a", index: 0, input: "abcabc", groups: undefined]
+      //["a", index: 3, input: "abcabc", groups: undefined]
+
+      // ES12
+      // replaceAll()
+      // 可以一次性替换所有匹配
+      // 同replace()一样，该方法接收两个参数，第一个参数为RegExp对象或一个字符串(要替换的字符)，第二个参数可以是一个字符串(替换文本)或函数，返回一个执行替换操作后的字符串
+      // 不同的是如果是RegExp对象而不带g修饰符，则会报错
+      // replaceAll()的第二个参数可以使用一些特殊字符串。
+      // $&：匹配的子字符串。
+      // $` ：匹配结果前面的文本。
+      // $'：匹配结果后面的文本。
+      // $n：匹配成功的第n组内容，n是从1开始的自然数。这个参数生效的前提是，第一个参数必须是正则表达式。
+      // $$：指代美元符号$。
+      // console.log('abcabc'.replaceAll('a', 'x')) //xbcxbc
+      // console.log('abc'.replaceAll('b', '$&')) //abc
+      // console.log('abc'.replaceAll('b', '$`')) //aac
+      // console.log('abc'.replaceAll('b', `$'`)) //acc
+      // console.log('abc'.replaceAll(/(a)(b)/g, '$2$1')) //bac
+      // console.log('abc'.replaceAll('b', '$$')) //a$c
+    </script>
+  </head>
+  <body></body>
+</html>
