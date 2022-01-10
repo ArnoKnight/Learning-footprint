@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .code {
+            width: 80px;
+            height: 22px;
+            /* background-color: pink; */
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display: flex;">
+        <input type="text" name="" id="inputCode">
+        <div id="code" class="code"></div>
+    </div>
+    <script>
+        var input = document.getElementById('inputCode')
+        var code = document.getElementById('code')
+
+        function getRandomNum(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min
+        }
+        var codeStr = ''
+
+        function getCode() {
+            while (codeStr.length < 4) {
+                codeStr += getRandomNum(1, 9)
+            }
+            return codeStr
+        }
+        code.innerHTML = getCode()
+
+        input.addEventListener('keypress', function (e) {
+            // console.log(e);
+            if (e.charCode === 13) {
+                var inputValue = input.value
+                if (inputValue == codeStr) {
+                    alert('验证码正确！！！')
+                    return
+                }
+                alert('验证码错误！！！')
+                // console.log(codeStr);
+                codeStr = ''
+                code.innerHTML = getCode()
+                input.value = ''
+            }
+        })
+    </script>
+</body>
+
+</html>

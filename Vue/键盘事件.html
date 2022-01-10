@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <input type="text" placeholder="enter" v-on:keyup.enter='submit($event)'><br>
+        <input type="text" placeholder="enter" v-on:keyup.13='submit($event)'><br>
+        <!-- 按键修饰符可以为绝大多数按键绑定事件，个别无法绑定事件，比如外置键盘的音量调节键、屏幕亮度键等 -->
+        <!-- 单个单词直接用，多个单词需要首字母小写，单词之间用-连接 -->
+        <input type="text" placeholder="PageDown" v-on:keyup.page-down='submit($event)'><br>
+        <!-- 系统修饰键（用法特殊）:ctrl、alt、shift、meta -->
+        <!-- 配合keyup使用：按下修饰键的同时，再按下其他键，随后释放其他键，事件才被触发，触发的事件源是随后按下的键 -->
+        <!-- 使用keydown可以正常触发事件，vue中提供的tab也因为同理而用法特殊 -->
+        <input type="text" placeholder="Shift" v-on:keydown.Shift='submit($event)'><br>
+        <input type="text" placeholder="Shift" v-on:keyup.16='submit($event)'><br>
+        <!-- 需要两个或多个按键触发事件、在后面加上.即可 -->
+        <input type="text" placeholder="Shift" v-on:keyup.Shift.y='submit($event)'><br>
+        <input type="text" placeholder="Control" v-on:keyup.Control='submit($event)'><br>
+        <input type="text" placeholder="ctrl" v-on:keyup.ctrl='submit($event)'><br>
+
+    </div>
+    <script>
+        // 自定义键名 Vue.config.keyCodes.自定义键名=键码
+        // Vue.config.keyCodes.Shift = 16;
+        const app = new Vue({
+            el: '#root',
+            methods: {
+                submit(e) {
+                    // console.log(e.key, e.keyCode);
+                    console.log(e.target.value);
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+初识vue
+    root容器里的代码被称为Vue模板
+    Vue实例和容器是一一对应的
+    {{JS表达式}}
+
+Vue模板语法有两大类
+    1.插值语法：
+        功能：用于解析标签体内容
+        写法：{{xxx}}，xxx是JS表达式，且可以直接读取到data中的所有属性
+    2.指令语法：
+        功能：用于解析标签(包括：标签属性、标签体内容、绑定事件)
+        举例：v-bind:href="xxx"或简写为:href="xxx"，xxx同样要写js表达式，且可以直接读取到data中的所有属性
+        备注：Vue中有很多的指令，且形式都是：v-???，此处我们知识拿v-bind举个例子
+
+el与data
+    el的两种写法
+        1.el:'#root'
+        2.v.$mount('#root')
+    data的两种写法
+        1.对象式
+        data:{}
+        2.函数式
+        data:function(){
+            return{
+                xxx
+            }
+        }
+        或
+        data(){
+            return{
+
+            }
+        }
+        ?????
+
+
+

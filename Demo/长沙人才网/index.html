@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <!-- 头部 -->
+    <header class="header">
+        <!-- 头部内容盒子 -->
+        <div class="w headerBox">
+            <div class="logo">
+                <img src="./static/images/logo.png" alt="">
+            </div>
+            <ul class="navList" id="navList">
+                <!-- <li>首页</li>
+                <li>求职招聘<img src="./static/images/new.png" alt=""></li>
+                <li>人事代理</li>
+                <li>人才培训</li>
+                <li>招考测评</li>
+                <li>技能培训</li>
+                <li>灵活用工</li>
+                <li>留学归国</li>
+                <li>猎头派遣</li> -->
+            </ul>
+            <div class="btnBox">
+                <a href="javascript:;" class="loginBtn">求职登录</a>
+                <a href="javascript:;" class="registerBtn">注册</a>
+            </div>
+        </div>
+    </header>
+    <!-- 搜索栏 -->
+    <nav class="nav">
+        <div class="navBox w">
+            <div class="navBox_left">
+                <span class="indexName">长沙人才网</span>
+                <span class="splitline"></span>
+                <div class="navBox_Left_img">
+                    <img src="./static/images/font.png" alt="">
+                </div>
+            </div>
+            <div class="navBox_right">
+                <div class="searchBox">
+                    <input type="text" class="search" id="search" placeholder="搜索职位或公司">
+                    <a href="javascript:;" class="searchBtn" id="searchBtn">搜索</a>
+                </div>
+                <ul class="quickSearch" id="quickSearch">
+                    <!-- <li><a href="javascript:;">司机</a></li>
+                    <li><a href="javascript:;">程序员</a></li>
+                    <li><a href="javascript:;">软件工程师</a></li>
+                    <li><a href="javascript:;">建造师</a></li>
+                    <li><a href="javascript:;">会计</a></li> -->
+            </div>
+        </div>
+        </div>
+    </nav>
+    <!-- 资讯 -->
+    <div class="news w">
+        <div class="newsLeft" id="newsLeft">
+            <ul class="newsLeftTop" id="newsLeftTop">
+                <!-- <li>国企·事业单位招聘资讯</li>
+                <li>招聘咨询</li>
+                <li>招聘咨询</li> -->
+            </ul>
+            <!-- <ul class="newsBox" id="newsBox"> -->
+            <!-- <li class="newBox"> -->
+            <!-- <div class="newBoxLeft"> -->
+            <!-- 招聘标题 -->
+            <!-- <span class="newBoxLeft_top" id="newBoxLeft_top"></span> -->
+            <!-- 招聘信息 -->
+            <!-- <span class="newBoxLeft_bottom" id="newBoxLeft_bottom"><span id="postType"></span> | 岗位<span
+                                id="postNum"></span> |
+                            招聘<span id="recruitNum"></span></span>
+                    </div> -->
+            <!-- 招聘发布时间 -->
+            <!-- <div class="newBoxRight" id="newBoxRight"></div>
+                </li> -->
+            <!-- <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li>
+                <li class="newBox">
+                    <div class="newBoxLeft">
+                        <span class="newBoxLeft_top">湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                        <span class="newBoxLeft_bottom">国有企业 | 岗位100 | 招聘50</span>
+                    </div>
+                    <div class="newBoxRight">10-24</div>
+                </li> -->
+            <!-- </ul> -->
+        </div>
+        <div class="newsRight">
+            <div class="newsRightTop">
+                <div class="newsRightTopLogoBox">
+                    <img src="./static/images/paperPlane.png" alt="">
+                </div>
+                <div class="newsRightTopContentBox">
+                    <div class="newsRightTopTitle">企业服务</div>
+                    <div class="newsRightTopFont">服务热线：0731-85517978</div>
+                    <div class="newsRightTopFont">咨询热线：0731-85517666</div>
+                </div>
+            </div>
+            <ul class="newsRightBottom" id="newsRightBottom">
+                <!-- <li class="newsRightBottomLi">
+                    <img src="./static/images/1.png" alt="">
+                    <span>市场介绍</span>
+                </li>
+                <li class="newsRightBottomLi">
+                    <img src="./static/images/2.png" alt="">
+                    <span>现场招聘</span>
+                </li>
+                <li class="newsRightBottomLi">
+                    <img src="./static/images/3.png" alt="">
+                    <span>招聘服务</span>
+                </li>
+                <li class="newsRightBottomLi">
+                    <img src="./static/images/1.png" alt="">
+                    <span>退役军人</span>
+                </li>
+                <li class="newsRightBottomLi">
+                    <img src="./static/images/5.png" alt="">
+                    <span>招聘外包</span>
+                </li>
+                <li class="newsRightBottomLi">
+                    <img src="./static/images/6.png" alt="">
+                    <span>求职服务</span>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+    <!-- 最新招聘会 -->
+    <div class="spaceBox w">
+        <div class="spaceBoxLine"></div>
+        <span>最新招聘会</span>
+        <div class="spaceBoxLine"></div>
+    </div>
+    <div class="jobFairBox w">
+        <div class="recruitBoxBanner">
+            <img src="./static/images/banner.png" alt="">
+        </div>
+        <div class="recruitBoxContent">
+            <div class="recruitBoxContentTop">
+                <div class="recruitBoxContentTopCard">
+                    <div class="recruitBoxContentTopCard_title">湖南“点亮万家灯火” 就业帮扶活动专场(网络)</div>
+                    <div class="recruitBoxContentTopCard_content">
+                        关于我们公司注册成立于2019年10月21日，注册资金900万，公司拥有广泛的商品信息网络和强有力的执行团队，本着“客户第一、诚信至上、求实创新、互惠互利”的原则，与多家企业建立了长期的合作关系核心理念公司坚持“唯才是举，
+                        能所用”，</div>
+                </div>
+                <div class="recruitBoxContentTopCard">
+                    <div class="recruitBoxContentTopCard_title">湖南“点亮万家灯火” 就业帮扶活动专场(网络)</div>
+                    <div class="recruitBoxContentTopCard_content">
+                        关于我们公司注册成立于2019年10月21日，注册资金900万，公司拥有广泛的商品信息网络和强有力的执行团队，本着“客户第一、诚信至上、求实创新、互惠互利”的原则，与多家企业建立了长期的合作关系核心理念公司坚持“唯才是举，
+                        能所用”，</div>
+                </div>
+            </div>
+            <ul class="recruitBoxContentList">
+                <li>
+                    <div class="recruitBoxContentList_left">
+                        <div><img src="./static/images/7.png" alt="">
+                            <span class="recruitBoxContentList_left_title">9月28日日常招聘会（现场）</span></div>
+                        <span class="recruitBoxContentList_left_date">2020-07-02</span>
+                    </div>
+                    <div class="recruitBoxContentList_btnBox">
+                        <a href="javascript:;" class="recruitBoxContentList_btn">在线定展</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">一键预约</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">参会企业</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="recruitBoxContentList_left">
+                        <div><img src="./static/images/7.png" alt="">
+                            <span class="recruitBoxContentList_left_title">9月28日日常招聘会（现场）</span></div>
+                        <span class="recruitBoxContentList_left_date">2020-07-02</span>
+                    </div>
+                    <div class="recruitBoxContentList_btnBox">
+                        <a href="javascript:;" class="recruitBoxContentList_btn">在线定展</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">一键预约</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">参会企业</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="recruitBoxContentList_left">
+                        <div><img src="./static/images/7.png" alt="">
+                            <span class="recruitBoxContentList_left_title">9月28日日常招聘会（现场）</span></div>
+                        <span class="recruitBoxContentList_left_date">2020-07-02</span>
+                    </div>
+                    <div class="recruitBoxContentList_btnBox">
+                        <a href="javascript:;" class="recruitBoxContentList_btn">在线定展</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">一键预约</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">参会企业</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="recruitBoxContentList_left">
+                        <div><img src="./static/images/7.png" alt="">
+                            <span class="recruitBoxContentList_left_title">9月28日日常招聘会（现场）</span></div>
+                        <span class="recruitBoxContentList_left_date">2020-07-02</span>
+                    </div>
+                    <div class="recruitBoxContentList_btnBox">
+                        <a href="javascript:;" class="recruitBoxContentList_btn">在线定展</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">一键预约</a>
+                        <a href="javascript:;" class="recruitBoxContentList_btn">参会企业</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <ul class="banner w" id="banner">
+        <!-- <li>
+            <img src="./static/images/banner1.png" alt="">
+            <span class="deleteBtn">x</span>
+        </li>
+        <li>
+            <img src="./static/images/banner2.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner3.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner4.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner5.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner6.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner7.png" alt="">
+        </li>
+        <li>
+            <img src="./static/images/banner8.png" alt="">
+        </li> -->
+    </ul>
+    <!-- 最新招聘 -->
+    <div class="spaceBox w">
+        <div class="spaceBoxLine"></div>
+        <span>最新招聘</span>
+        <div class="spaceBoxLine"></div>
+    </div>
+    <div class="recruitBox w" id="recruitBox">
+        <ul class="recruitList" id="recruitList">
+            <!-- <li>IT/互联网</li>
+            <li>服务业</li>
+            <li>汽车/制造</li>
+            <li>贸易/零售</li>
+            <li>房地产/建筑</li>
+            <li>医疗/化工</li>
+            <li>消费品</li>
+            <li>文化/传媒</li>
+            <li>最新招聘</li>
+            <li>其他</li> -->
+        </ul>
+        <div class="w" style="height: 16px;"></div>
+        <!-- <ul class="recruitCardList" id="recruitCardList">
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+            <li class="recruitCard">
+                <div class="recruitCardTop">
+                    <div class="recruitCardTop_title">web前端开发<span class="recruitCardTop_money">8k-12k</span></div>
+                    <div class="recruitCardTop_condition">长沙 | 3-5年 | 本科</div>
+                </div>
+                <div class="recruitCardBottom">
+                    湖南预计科技服务有限公司 | 互联网
+                </div>
+            </li>
+        </ul> -->
+    </div>
+    <div class="seeMore w">
+        <a href="javascript:;">查看更多</a>
+    </div>
+    <!-- 名企专区 -->
+    <div class="spaceBox w">
+        <div class="spaceBoxLine"></div>
+        <span>名企专区</span>
+        <div class="spaceBoxLine"></div>
+    </div>
+    <ul class="famousEnterprisesBox w" id="famousEnterprisesBox">
+        <!-- <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li>
+        <li class="famousEnterprisesCard">
+            <div class="famousEnterprisesCardTop">
+                <div class="famousEnterprisesCard_logo">
+                    <img src="./static/images/company.png" alt="">
+                </div>
+                <div class="famousEnterprisesCard_title">南宁市环宇彤泰电力管道设备有限公司</div>
+                <div class="famousEnterprisesCard_information">民营企业 | 50人以下</div>
+            </div>
+            <div class="famousEnterprisesCardBottom">
+                <div class="famousEnterprisesCardBottom_left"><span style="color: #ED530F;">4</span><span>在招职位</span>
+                </div>
+                <div style="width: 1px;height: 35px; background-color: #F1F1F3;"></div>
+                <div class="famousEnterprisesCardBottom_left"><span
+                        style="color: #ED530F;">100%</span><span>简历查看率</span></div>
+            </div>
+        </li> -->
+    </ul>
+    <div class="seeMore w">
+        <a href="javascript:;">查看更多</a>
+    </div>
+    <div class="focusInformation w">
+        <div class="focusInformation_left" id="focusInformation_left">
+            <div class="focusInformation_leftTitle">焦点资讯</div>
+            <!-- 轮播图 -->
+            <ul class="rotationChart" id="rotationChart">
+                <!-- <li class="rotationChart_Li"><img src="./static/images/banner1.png" alt=""></li>
+                <li class="rotationChart_Li"><img src="./static/images/banner2.png" alt=""></li>
+                <li class="rotationChart_Li"><img src="./static/images/banner3.png" alt=""></li> -->
+            </ul>
+            <div class="rotationChart_sort" id="rotationChart_sort">
+                <!-- <span class="sort"></span>
+                <span class="sort"></span>
+                <span class="sort"></span> -->
+            </div>
+            <div class="focusInformationContent">
+                <div class="focusInformationContentBox"><span
+                        class="focusInformationContent_title">习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈</span><span
+                        class="focusInformationContent_date">2020-03-22</span></div>
+                <div class="focusInformationContent_content">
+                    习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈习近平同巴基斯坦总统阿尔维雅会谈
+                </div>
+            </div>
+        </div>
+        <div class="focusInformation_right">
+            <div class="focusInformation_right_tabs">
+                <div class="focusInformation_right_tab">新闻动态</div>
+                <div class="focusInformation_right_tab">人才政策</div>
+            </div>
+            <ul class="focusInformation_right_body">
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+                <li class="focusInformation_right_list">
+                    <div style="width:6px;height: 2px;background-color: #EB535B;"></div>
+                    <div class="focusInformation_right_list_title">
+                        <span>湖南幼儿师范高等专科学校招聘非事业编合同湖南幼儿师范高等专科学校招聘非事业编合同</span>
+                    </div>
+                    <div class="focusInformation_right_list_date">2020-03-22</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footerBody w">
+            <div class="footerBodyDl">
+                <dl>
+                    <dt>企业服务</dt>
+                    <dd>职位搜索</dd>
+                    <dd>新闻资讯</dd>
+                    <dd>直播APP</dd>
+                </dl>
+                <dl>
+                    <dt>使用与帮助</dt>
+                    <dd>平台协议</dd>
+                    <dd>防骗指南</dd>
+                    <dd>使用帮助</dd>
+                </dl>
+                <dl>
+                    <dt>联系长沙人才</dt>
+                    <dd>长沙市人才中心</dd>
+                    <dd>地址长沙市岳麓区高级技术开发区159号</dd>
+                    <dd>联系电话0731-2515421</dd>
+                </dl>
+                <div class="footerBodyRight">
+                    <div style="color: #ABACAD;font-size: 24px;font-weight: bold;">长沙人才网</div>
+                    <div style="color: #ABACAD;font-size: 12px;">企业服务热线和举报投诉400 0000</div>
+                    <div style="color: #ABACAD;font-size: 12px;">工作日 8:00-22:00</div>
+                    <div style="color: #ABACAD;font-size: 12px;">休息日9:30-18:30</div>
+                </div>
+            </div>
+
+            <div class="copyRight">版权所有：长沙人才网 技术支持：创智和宇信息技术股份有限公司 备案/许可证编号：湘ICP备10001045号</div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let persion = {
+            name: 'Arno',
+            age: 18,
+            sex: 'man'
+        }
+        Object.defineProperty(persion, 'age', {
+            // 数据描述符
+            value: 30, //修改后的值
+            enumerable:true, //控制属性是否可以枚举，默认值为false
+            writable:true, //控制属性是否可以被修改，默认值为false
+            configurable:true //控制属性是否可以被删除，默认值是false
+            // 数据描述符是一个具有值的属性，该值可以是可写的，也可以是不可写的。
+            // 存取描述符是由 getter 函数和 setter 函数所描述的属性。
+            // 一个描述符只能是这两者其中之一；不能同时是两者，同时使用两者会报错
+            // 存取描述符
+            // get() {
+            //     console.log('value被读取了');
+            //     // 不return返回值为undefine
+            //     return '焯！'
+            // },
+            // set(value) {
+            //     console.log('value被修改了，最新值为' + value);
+            //     // 固定返回被修改之后的值，无法通过return修改返回值
+            //     // return 100
+            // }
+        })
+    </script>
+</body>
+
+</html>

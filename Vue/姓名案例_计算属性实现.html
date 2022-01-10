@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- 原理：底层借助了Object.defineproperty方法提供的getter和setter -->
+        <!-- 优势：与methods实现相比，内部有缓存机制（复用），效率更高，调式方便 -->
+        姓：<input type="text" v-model:value='firstName'><br>
+        名：<input type="text" v-model='lastName'><br>
+        <!-- 要计算的属性并不存在，需要通过已有属性计算得来 -->
+        全名：<span>{{fullName}}</span>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#root',
+            data: {
+                firstName: '张',
+                lastName: '三'
+            },
+            computed: {
+                // 完整写法
+                fullName: {
+                    get() {
+                        // 此处的this指向vm，是因为vue底层修改了此处的this指向，否则this的指向应该为fullName
+                        // 执行：初次读取时会执行一次；当依赖的数据发生改变时会被再次调用
+                        // 当依赖数据发生改变时get会被再次调用，这也是vue的底层实现的，原来的Object.defineProperty中的get并没有这个功能
+                        // 对象里的方法名不简写为get:function(){}
+                        return this.firstName + '-' + this.lastName
+                    },
+                    // 当fullName被修改时调用
+                    set: function (value) {
+                        console.log('修改了');
+                        const arr = value.split('-')
+                        this.firstName = arr[0]
+                        this.lastName = arr[1]
+                    }
+                }, 
+                // 简写
+                // 如果只读不改可以使用简写方式
+                // fullName: function () {
+                //     return this.firstName + '-' + this.lastName
+                // }
+                // 或
+                // fullName() {
+                //     return this.firstName + '-' + this.lastName
+                // }
+            }
+        });
+    </script>
+</body>
+
+</html>

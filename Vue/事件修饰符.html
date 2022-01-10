@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 200px;
+            height: 100px;
+            padding: 10px;
+            background-color: skyblue;
+            margin-bottom: 10px;
+        }
+
+        .son {
+            width: 100px;
+            height: 50px;
+            background-color: pink;
+        }
+    </style>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <!-- prevent阻止默认事件 -->
+        <a href="https://www.baidu.com" @click.prevent="showInfo">点我提示信息</a>
+        <!-- stop阻止事件冒泡 -->
+        <div @click="stopDemo('div')">
+            <button @click.stop="stopDemo('btn')">阻止事件冒泡demo</button>
+        </div>
+        <!-- once事件只触发一次 -->
+        <button @click.once='onceDemo'>事件只触发一次</button>
+        <!-- capture使用事件的捕获模式 -->
+        <div class="father" @click.capture='captureDemo("father")'>
+            <div class="son" @click='captureDemo("son")'></div>
+        </div>
+        <!-- self只有event.target是当前操作的元素时才触发事件 -->
+        <!-- 如果父元素开启了捕获模式，则点击使用了self的子元素依旧会触发父元素事件 -->
+        <div class="father" @click.capture='selfDemo("father")'>
+            <div class="son" @click.self='selfDemo("son")'></div>
+        </div>
+        <div class="father" @click.self='selfDemo("father")'>
+            <div class="son" @click='selfDemo("son")'></div>
+        </div>
+        <!-- passive事件的默认行为立即执行，无需等待事件回调执行完毕 -->
+        <a href="https://www.baidu.com" @click="passiveDemo">百度一下</a>
+        <!-- 多个修饰符同时用，中间用.相连，注意：这里有前后顺序 -->
+        <div class="father" @click='moreDemo("father")'>
+            <a href="https://www.baidu.com" @click.prevent.stop="moreDemo('son')">百度一下</a>
+        </div>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {},
+            methods: {
+                showInfo() {
+                    alert('GOGOGO')
+                },
+                stopDemo(str) {
+                    alert(str)
+                },
+                onceDemo() {
+                    alert('GOGOGO')
+                },
+                captureDemo(str) {
+                    alert(str)
+                },
+                selfDemo(str) {
+                    alert(str)
+                },
+                passiveDemo() {
+                    console.log('GOGOGOGOGOGOGO');
+                },
+                moreDemo(str) {
+                    alert(str)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

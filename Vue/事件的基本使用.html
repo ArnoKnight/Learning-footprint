@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <button v-on:click='showInfo1'>点我提示信息</button>
+        <!-- $event事件占位符 -->
+        <button @click='showInfo2($event,666)'>点我提示信息（传参）</button>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data: {
+
+            },
+            methods: {
+                showInfo1() {
+                    alert('GOGOGO')
+                },
+                showInfo2(e, num) {
+                    console.log(e);
+                    alert('传过来的数字是：' + num)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
