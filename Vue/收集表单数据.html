@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <form>
+            <!-- 修饰符trim去掉收尾空格 -->
+            账号：<input type="text" v-model.trim="userInfo.username"><br>
+            密码：<input type="text" v-model="userInfo.password"><br>
+            <!-- 修饰符number输入字符串转为有效数字 -->
+            年龄：<input type="number" v-model.number="userInfo.age"><br>
+            性别：男<input type="radio" v-model="userInfo.sex" name="sex" value="man">女<input type="radio"
+                v-model="userInfo.sex" name="sex" value="woman"><br>
+            爱好：抽烟<input type="checkbox" value="chouyan" v-model="userInfo.hobby">喝酒<input type="checkbox" value="hejiu"
+                v-model="userInfo.hobby">烫头<input type="checkbox" value="tangtou" v-model="userInfo.hobby"><br>
+            所属校区：<select v-model="userInfo.city">
+                <option value="">请选择城市</option>
+                <option value="beijing">北京</option>
+                <option value="shanghai">上海</option>
+                <option value="guangzhou">广州</option>
+            </select><br>
+            <!-- 修饰符lazy失去焦点再收集数据 -->
+            其他信息：<textarea v-model.lazy="userInfo.text"></textarea><br>
+            <input type="checkbox" v-model='userInfo.checked'>阅读并接受<a href="javascript:;">《用户协议》</a>
+            <button type="submit" @click.prevent="demo">提交</button>
+        </form>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data() {
+                return {
+                    userInfo: {
+                        username: '',
+                        password: '',
+                        sex: '',
+                        hobby: [],
+                        city: '',
+                        text: '',
+                        checked: false,
+                        age: ''
+                    }
+                }
+            },
+            methods: {
+                demo() {
+                    console.log(JSON.stringify(this.userInfo))
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

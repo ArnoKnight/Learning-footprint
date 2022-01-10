@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <h2>列表过滤</h2>
+        <input type="text" placeholder="请输入您要查找的内容" v-model='keyWord'>
+        <button @click="sortType = 1">升序</button>
+        <button @click="sortType = 2">降序</button>
+        <button @click="sortType = 0">原顺序</button>
+        <ul>
+            <li v-for="(item,index) in filPersions" :key='item.id'>
+                {{item.name}}-{{item.age}}-{{item.sex}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        new Vue({
+            el: '#root',
+            data() {
+                return {
+                    sortType: 0,
+                    keyWord: '',
+                    persions: [{
+                            id: '001',
+                            name: '马冬梅',
+                            age: 37,
+                            sex: '女'
+                        },
+                        {
+                            id: '002',
+                            name: '周冬雨',
+                            age: 28,
+                            sex: '女'
+                        },
+                        {
+                            id: '003',
+                            name: '周杰伦',
+                            age: 50,
+                            sex: '男'
+                        },
+                        {
+                            id: '004',
+                            name: '温兆伦',
+                            age: 43,
+                            sex: '男'
+                        }
+                    ]
+                }
+            },
+            computed: {
+                filPersions() {
+                    let arr = this.persions.filter((val) => {
+                        return val.name.indexOf(this.keyWord) !== -1
+                    })
+                    if (this.sortType) {
+                        arr.sort((a, b) => {
+                            return this.sortType == 1 ? a.age - b.age : b.age - a.age
+                        })
+                    }
+                    return arr
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
