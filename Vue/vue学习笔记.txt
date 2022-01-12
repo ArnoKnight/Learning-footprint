@@ -33,5 +33,27 @@ el与data
         }
         ?????
 
+    data的两种写法的区别
+        在组件中，如果同一个组件在同一个页面被用了两次以上且涉及数据修改，那么修改同步
+        而如果采用函数式并通过return对象的方式，每次return的都是一个全新的对象，可以做到同一个组件在不同地方使用互不干扰
 
 
+component几个注意点
+    1.关于组建名：
+        一个单词组成：
+            第一种写法(首字母小写)：school
+            第二种写法(首字母大写)：school
+        多个单词组成：
+            第一种写法(kebab-case)：my-school
+            第二种写法(CamelCase命名)：MySchool(需要Vue脚手架支持)
+        备注：
+            组件名尽可能回避HTML中已有的元素名称，例如：h2、H2（会自动转换为h2且不报错不显示）都不行
+            可以使用name配置指定组件在开发者工具中呈现的名字
+    
+    2.关于组件标签：
+        第一种写法：<school></school>
+        第二种写法：<school/>
+        备注：不要使用脚手架时，<school/>会导致后续组件不能渲染
+    
+    3.一个简写方式
+        const school = Vue.extend(option)可简写为：const school = option

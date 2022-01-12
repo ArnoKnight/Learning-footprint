@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./vue/vue.js"></script>
+</head>
+
+<body>
+    <div id="root">
+        <div>{{num}}</div>
+        <button @click="numAdd">点我加1</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        let v1
+        let v2
+        let vm = new Vue({
+            el: '#root',
+            data: {
+                num: 1,
+            },
+            methods: {
+                numAdd() {
+                    this.num++
+                }
+            },
+            beforeCreate() {
+                console.log('beforeCreate触发了');
+                console.log('beforeCreate', this);
+                v1 = this
+                debugger;
+                // 此时无法通过vm访问到data中的数据，methods中的方法
+            },
+            created() {
+                console.log('created触发了');
+                console.log('created', this);
+                v2 = this
+                // debugger;
+                // 可以通过vm访问到data中的数据、methods中配置的方法
+            },
+            beforeMount() {
+                console.log('beforeMount触发了');
+                // debugger;
+                // 此时页面呈现的是未经Vue编译的DOM结构
+                // 所有对DOM的操作，最终都不奏效(?)
+            },
+            // asw:在beforeMount之后，mounted之前，Vue会将内存中的虚拟DOM转为真是DOM并插入页面
+            mounted() {
+                console.log('mounted触发了');
+                // debugger;
+                // 此时页面中呈现的是经过Vue编译的DOM
+                // 此时对DOM的操作均为有效(尽可能避免)
+                // 至此，初始化过程结束，一般再次进行：开启定时器、发送网络请求、订阅消息、绑定自定义事件、等初始化操作
+            },
+            // 在mounted之后才可以通过变量vm访问到Vue实例对象，即Vue的初始化工作完成之后
+            beforeUpdate() {
+                console.log('beforeUpdate触发了');
+                console.log('beforeUpdate', this);
+                // console.log(this.num);
+                // debugger;
+                // 此时数据是新的，但页面时旧的，即：页面尚未和数据保持同步
+            },
+            // 根据新数据，生成新的虚拟DOM，随后与旧的虚拟DOM进行比较，最终完成页面更新，即完成了Model -> View的更新
+            updated() {
+                console.log('updated触发了');
+                console.log('updated', this);
+
+                // debugger;
+                // 此时数据是新的，页面也是新的，即：页面和数据保持同步
+            },
+            beforeDestroy() {
+                console.log('beforeDestroy触发了');
+
+                // debugger;
+                // 此时vm中所有的：data、methods、指令等等，都处于可用状态，马上要执行销毁过程，一般在此阶段：关闭定时器、取消订阅消息、解绑自定义事件等收尾操作
+            },
+            destroyed() {
+                console.log('destroyed触发了');
+            },
+        })
+    </script>
+</body>
+
+</html>
