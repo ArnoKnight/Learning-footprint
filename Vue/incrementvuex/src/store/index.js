@@ -6,7 +6,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   // 准备state——用于存储数据
   state: {
-    sum: 0
+    sum: 0,
+    name: "张三",
+    age: 18
   },
   // 准备mutation——用于操作数据（state）
   mutations: {
@@ -15,12 +17,6 @@ export default new Vuex.Store({
     },
     JIAN(state, value) {
       state.sum -= value
-    },
-    JIAODD(state, value) {
-      state.sum += value
-    },
-    JIAWAIT(state, value) {
-      state.sum += value
     },
   },
   //准备actions——用于响应组件中的动作
@@ -32,11 +28,19 @@ export default new Vuex.Store({
       contentx.commit('JIAN', value)
     },
     jiaOdd(contentx, value) {
-      contentx.commit('JIAODD', value)
+      if (contentx.state.sum % 2) contentx.commit('JIA', value)
     },
     jiaWait(contentx, value) {
-      contentx.commit('JIAWAIT', value)
+      setTimeout(() => {
+        contentx.commit('JIA', value)
+      }, 500);
     }
   },
-  modules: {}
+  modules: {},
+  // 准备geters——用于将state中的数据进行加工
+  getters: {
+    bigSum(state) {
+      return state.sum * 10
+    }
+  }
 })
