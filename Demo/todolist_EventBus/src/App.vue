@@ -67,14 +67,21 @@ export default {
         return !todo.done;
       });
     },
+    updateTodo(id, title) {
+      this.todos.forEach((todo) => {
+        if (todo.id === id) todo.title = title;
+      });
+    },
   },
   mounted() {
     this.$bus.$on("checkTodo", this.checkTodo);
     this.$bus.$on("deleteTodo", this.deleteTodo);
+    this.$bus.$on("updateTodo", this.updateTodo);
   },
   beforeDestroy() {
     this.$bus.$off("checkTodo");
     this.$bus.$off("deleteTodo");
+    this.$bus.$off("updateTodo");
   },
 };
 </script>
@@ -108,6 +115,18 @@ body {
 .btn-danger:hover {
   color: #fff;
   background-color: #bd362f;
+}
+
+.btn-edit {
+  color: #fff;
+  background-color: skyblue;
+  border: 1px solid rgb(75, 116, 133);
+  margin-right: 5px;
+}
+
+.btn-edit:hover {
+  color: #fff;
+  background-color: rgb(74, 116, 133);
 }
 
 .btn:focus {
