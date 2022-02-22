@@ -1,7 +1,7 @@
 <template>
   <div class="login">
     <div class="login-box">
-      <h3>“家庭健康账户”管理平台</h3>
+      <h3>管理平台</h3>
       <div class="login-box-body">
         <el-form ref="form" :model="form">
           <el-form-item>
@@ -27,7 +27,7 @@
           >
         </el-form>
       </div>
-      <p style="color: #ffffff">2022 &copy; 创智和宇2022届校招生-登月组</p>
+      <p style="color: #ffffff">&copy; ArnoKnight</p>
     </div>
   </div>
 </template>

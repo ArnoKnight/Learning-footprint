@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h2>欢迎来到“家庭健康账户”管理平台</h2>
+    <h2>欢迎来到管理平台</h2>
   </div>
 </template>
 

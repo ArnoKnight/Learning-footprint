@@ -3,7 +3,7 @@
     <el-container>
       <!-- 头部 -->
       <el-header class="header">
-        <h4>“家庭健康账户”管理平台</h4>
+        <h4>管理平台</h4>
         <!-- <img alt="Vue logo" src="../assets/logo.png" /> -->
         <div class="header-right">
           <p class="username">欢迎，admin</p>
